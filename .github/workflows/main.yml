@@ -22,4 +22,7 @@ jobs:
         run: npm ci
       - name: Exec textlint
         run: |
-          git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} --diff-filter=AM --name-only -- '*.md' | xargs npm run lint
+          git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} \
+            --diff-filter=AM \
+            --name-only -- '*.md' \
+            | xargs npm run lint
