@@ -1,0 +1,25 @@
+name: Exec textlint
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths:
+      - "articles/**.md"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "14"
+      - name: Install dependencies
+        run: npm ci
+      - name: Exec textlint
+        run: |
+          git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} --diff-filter=AM --name-only -- '*.md' | xargs npm run lint
