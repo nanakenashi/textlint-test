@@ -1,0 +1,25 @@
+{
+  "name": "textlint-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "textlint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanakenashi/textlint-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanakenashi/textlint-test/issues"
+  },
+  "homepage": "https://github.com/nanakenashi/textlint-test#readme",
+  "devDependencies": {
+    "textlint": "^11.7.6",
+    "textlint-rule-preset-japanese": "^5.0.0"
+  }
+}
