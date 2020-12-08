@@ -20,6 +20,8 @@ jobs:
           node-version: "14"
       - name: Install dependencies
         run: npm ci
+      - name: Enable problem matcher
+        run: echo "::add-matcher::.github/textlint-matcher.json"
       - name: Exec textlint
         run: |
           git diff origin/${GITHUB_BASE_REF}..origin/${GITHUB_HEAD_REF} \
